@@ -1,0 +1,8 @@
+<p>Order Lookup</p>
+
+I would like to view the orders for <select ng-model="idSelected" ng-options="person as person.name for person in people track by person.id"></select>
+<form>
+    Please select a date range in which you would like to search:
+    Beginning Date: <input ng-model="beginningDate" type="Date">
+    Ending Date: <input ng-model="endingDate" type="Date">
+</form>

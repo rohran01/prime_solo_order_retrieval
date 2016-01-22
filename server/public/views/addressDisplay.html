@@ -1,0 +1,12 @@
+<p>Address Display</p>
+
+
+I would like the addresses on file for <select ng-model="idSelected" ng-change="getAddresses()" ng-options="person as person.name for person in people track by person.id"></select>
+
+<ul>
+    <li ng-repeat="address in addresses">
+        <b>{{address.address_type}}</b><br>
+        {{address.address_street}}<br>
+        {{address.address_city}} , {{address.address_state}} {{address.address_zip}}
+    </li><br><br>
+</ul>
