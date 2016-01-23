@@ -2,7 +2,28 @@
 
 I would like to view the orders for <select ng-model="idSelected" ng-options="person as person.name for person in people track by person.id"></select>
 <form>
-    Please select a date range in which you would like to search:
-    Beginning Date: <input ng-model="beginningDate" type="Date">
-    Ending Date: <input ng-model="endingDate" type="Date">
+    Please select a date range in which you would like to search:<br>
+    Beginning Date: <input ng-model="beginningDate" type="date">
+    Ending Date: <input ng-model="endingDate" type="date">
 </form>
+
+<button ng-click="submit()">Submit</button>
+
+
+<table ng-if="table">
+    <tr>
+        <th>Date</th>
+        <th>Order Number</th>
+        <th>Customer Name</th>
+        <th>Address</th>
+        <th>Order Total</th>
+    </tr>
+    <tr ng-repeat="order in orders">
+        <td>{{order.order_date}}</td>
+        <td>{{order.order_id}}</td>
+        <td>{{order.name}}</td>
+        <td>{{order.address_street}} {{order.address_city}}, {{order.address_state}} {{order.address_zip}}</td>
+        <td>${{order.amount}}</td>
+    </tr>
+</table>
+<p ng-if="table">Total of all orders: ${{displayTotal}}</p>
