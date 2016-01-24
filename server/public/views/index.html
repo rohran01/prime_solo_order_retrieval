@@ -2,20 +2,32 @@
 <html lang="en" ng-app="addressApp">
 <head>
     <meta charset="UTF-8">
-    <title>Schmamazon, Inc.</title>
-    <link rel="stylesheet" href="styles/styles.css">
+    <title>Shamazon, Inc.</title>
+    <link href="views/styles/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <!--<link rel="stylesheet" href="styles/styles.css">-->
     <script src="vendor/angular/angular.min.js"></script>
     <script src="vendor/angular-route/angular-route.min.js"></script>
     <script src="assets/scripts/client.min.js"></script>
 
 </head>
 <body>
-    <h1>Schmamazon</h1>
+    <div class="top-buffer">
+        <h1>Welcome to <span>Shamazon.com</span></h1>
+    </div>
+    <div class="banner">
+        <img src="views/banner.jpg"; />
+    </div>
+    <div class="nav-buttons">
+        <a href="#/addressDisplay"><button>Address Search</button></a>
+        <a href="#/orderLookup"><button>Order Search</button></a>
+    </div>
 
-    <a href="#/addressDisplay"><button>Address Search</button></a>
-    <a href="#/orderLookup"><button>Order Search</button></a>
-
-    <div ng-view></div>
-
+    <div class="views">
+        <div ng-view></div>
+    </div>
 </body>
+<div class="clearfix"></div>
+<footer>
+    <p>&copy; Shamazon, Inc.</p>
+</footer>
 </html>

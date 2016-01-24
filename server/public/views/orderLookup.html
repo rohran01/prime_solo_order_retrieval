@@ -1,13 +1,12 @@
-<p>Order Lookup</p>
 
-I would like to view the orders for <select ng-model="idSelected" ng-options="person as person.name for person in people track by person.id"></select>
+<p>I would like to view the orders for <select ng-model="idSelected" ng-options="person as person.name for person in people track by person.id"></select></p><br>
 <form>
-    Please select a date range in which you would like to search:<br>
-    Beginning Date: <input ng-model="beginningDate" type="date">
-    Ending Date: <input ng-model="endingDate" type="date">
+    <p>Please select a date range in which you would like to search:</p><br>
+    <p>Beginning Date: <input ng-model="beginningDate" type="date"></p><br>
+    <p>Ending Date: <input ng-model="endingDate" type="date"></p><br>
 </form>
 
-<button ng-click="submit()">Submit</button>
+<button class="submit" ng-click="submit()">Submit</button>
 
 
 <table ng-if="table">
@@ -26,4 +25,4 @@ I would like to view the orders for <select ng-model="idSelected" ng-options="pe
         <td>${{order.amount}}</td>
     </tr>
 </table>
-<p ng-if="table">Total of all orders: ${{displayTotal}}</p>
+<p class="total" ng-if="table">Total of all orders: ${{displayTotal}}</p>
