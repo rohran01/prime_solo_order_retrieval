@@ -66,18 +66,17 @@ a img {
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
-
-
+/*//////////////////////////////////////////////////////////////////*/
 
 .clearfix:after {
-  content: " "; /* Older browser do not support empty content */
+  content: " ";
   visibility: hidden;
   display: block;
   height: 0;
   clear: both;
 }
 
-
+/*//////////////////////////////////////////////////////////////////*/
 
 
 body {
@@ -166,6 +165,11 @@ footer {
   font-weight: bold;
 }
 .total {
+  margin: 8px 0;
   padding-top: 8px;
   padding-bottom: 8px;
+}
+.disclaimer {
+  font-size: 12px;
+  font-style: italic;
 }

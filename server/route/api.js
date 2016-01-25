@@ -49,7 +49,6 @@ router.get('/getOrders', function(request, response) {
     var requestInfo = {id: request.query.id,
                         beginningDate: request.query.beginningDate,
                         endingDate: request.query.endingDate};
-    console.log(requestInfo);
     var results = [];
 
     pg.connect(connectionString, function(error, client) {

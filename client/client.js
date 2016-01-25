@@ -14,7 +14,6 @@ app.config(['$routeProvider', function($routeProvider) {
             templateUrl: 'views/orderLookup.html',
             controller: 'OrderLookupController'
         })
-
 }]);
 
 app.controller('MainController', ['$scope', function($scope) {
@@ -59,8 +58,10 @@ app.controller('OrderLookupController', ['$scope', '$http', function($scope, $ht
     };
 
     function getOrders() {
-        var searchInfo = {params: {id: $scope.idSelected.id, beginningDate: $scope.beginningDate.toISOString(), endingDate: $scope.endingDate.toISOString()}};
-        console.log(searchInfo);
+        var searchInfo = {params: {id: $scope.idSelected.id,
+                                    beginningDate: $scope.beginningDate.toISOString(),
+                                    endingDate: $scope.endingDate.toISOString()}};
+
         $http.get('/api/getOrders', searchInfo).then(function(response) {
             $scope.calcTotal = 0;
             $scope.table = true;
@@ -93,7 +94,6 @@ app.controller('OrderLookupController', ['$scope', '$http', function($scope, $ht
     getNames();
 }]);
 
-
 function convertNumber(number) {
     var dollars = (number.substring(0, number.indexOf('.')));
     var cents = (number.substring(number.indexOf('.') + 1, number.length + 1));
@@ -109,11 +109,3 @@ function convertDate(date) {
     var year = date.substring(0, 4);
     return month + '-' + day + '-' + year;
 }
-
-//function getNames(){
-//    $http.get('/api/getNames').then(function(response) {
-//        console.log(response);
-//    }).catch(function(error) {
-//        console.log(error);
-//    })
-//}
