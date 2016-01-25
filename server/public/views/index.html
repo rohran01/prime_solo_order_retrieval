@@ -10,7 +10,7 @@
     <script src="assets/scripts/client.min.js"></script>
 
 </head>
-<body>
+<body ng-controller="MainController">
     <div class="top-buffer">
         <h1>Welcome to <span>Shamazon.com</span></h1>
     </div>
@@ -18,11 +18,12 @@
         <img src="views/banner.jpg"; />
     </div>
     <div class="nav-buttons">
-        <a href="#/addressDisplay"><button>Address Search</button></a>
-        <a href="#/orderLookup"><button>Order Search</button></a>
+        <a href="#/addressDisplay"><button ng-click="showViews()">Address Search</button></a>
+        <a href="#/orderLookup"><button ng-click="showViews()">Order Search</button></a>
     </div>
+    <div class="clearfix"></div>
 
-    <div class="views">
+    <div ng-if="clicked" class="views">
         <div ng-view></div>
     </div>
 </body>

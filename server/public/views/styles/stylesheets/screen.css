@@ -127,7 +127,6 @@ span {
 }
 footer {
   background-color: #232f3e;
-  height: 50px;
   width: 100%;
   color: white;
   bottom: 0;
@@ -136,7 +135,7 @@ footer {
 }
 .top-buffer {
   width: 100%;
-  height: 100px;
+  height: 80px;
   color: white;
   font-size: 60px;
   padding: 36px 0 10px 0;
@@ -144,6 +143,7 @@ footer {
 .nav-buttons {
   margin: 10px;
   padding: 20px;
+  float: right;
 }
 .views {
   background-color: white;

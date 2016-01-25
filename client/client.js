@@ -2,6 +2,10 @@ var app = angular.module('addressApp', ['ngRoute']);
 
 app.config(['$routeProvider', function($routeProvider) {
     $routeProvider
+        .when('/', {
+            templateUrl: 'views/index.html',
+            controller: 'MainController'
+        })
         .when('/addressDisplay', {
             templateUrl: 'views/addressDisplay.html',
             controller: 'AddressDisplayController'
@@ -11,6 +15,15 @@ app.config(['$routeProvider', function($routeProvider) {
             controller: 'OrderLookupController'
         })
 
+}]);
+
+app.controller('MainController', ['$scope', function($scope) {
+
+    $scope.clicked = false;
+
+    $scope.showViews = function() {
+        $scope.clicked = true;
+    }
 }]);
 
 app.controller('AddressDisplayController', ['$scope', '$http', function($scope, $http) {
